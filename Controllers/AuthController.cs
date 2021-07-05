@@ -33,6 +33,8 @@ namespace Api.Controllers
             {
                 Name = dto.Name,
                 Email = dto.Email,
+                Section = dto.Section,
+                Hobby = dto.Hobby,
                 Password = BCrypt.Net.BCrypt.HashPassword(dto.Password) // encrypting password using a nuget package BCrypt to turn a string into a hash
             };
 
@@ -65,7 +67,7 @@ namespace Api.Controllers
         }
 
         [HttpGet(template:"user")] // finding user
-        public IActionResult User()
+        public IActionResult GetUser()
         {
             try
             {
